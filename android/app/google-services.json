@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330643514701",
+    "project_id": "hbus-ccbbc",
+    "storage_bucket": "hbus-ccbbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330643514701:android:6c75f5a4d5708f4ba70304",
+        "android_client_info": {
+          "package_name": "com.example.h_bus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330643514701-asemld6ttoc7ge26osjpv7sijtj89onm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTjkf-KGXTG6Ot4lEjvefIXWedei6eOIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330643514701-asemld6ttoc7ge26osjpv7sijtj89onm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
