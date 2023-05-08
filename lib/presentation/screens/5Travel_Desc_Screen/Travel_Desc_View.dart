@@ -91,13 +91,62 @@ class Travel_Desc_View extends StatelessWidget {
                             int.parse(travels.usersnumber.toString())
                         ? Expanded(
                             flex: 1,
-                            child: Text(
-                              "لا يوجد مكان في هذه العربيه",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xff669E76),
+                            child: Container(
+                              // color: Colors.blue,
+                              child: Column(
+                                children: [
+                                  Spacer(),
+                                  Text(
+                                    "لا يوجد مكان في هذه العربيه",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Color(0xff669E76),
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  CustomAnimatedButton(
+                                    function: () {
+                                      if (Travel_Desc_Cubit.get(context).add ==
+                                          false) {
+                                        showToast(
+                                            text: "انت غير مسجل",
+                                            state: ToastStates.SUCCESS);
+                                      } else {
+                                        Travel_Desc_Cubit.get(context)
+                                            .deleteUser(
+                                                travelModel: travels,
+                                                usermodel: usersModel);
+                                        Travel_Desc_Cubit.get(context).checkAdd(
+                                            travelModel: travels,
+                                            usermodel: usersModel);
+                                        print(
+                                            travels.userBus!.length.toString());
+                                        print(Travel_Desc_Cubit.get(context)
+                                            .add
+                                            .toString());
+                                        showToast(
+                                            text: "تم الحذف ",
+                                            state: ToastStates.SUCCESS);
+                                      }
+                                    },
+                                    widget: Text("حذف"),
+                                    ButtonHight: 80,
+                                    Buttonwidth: 80,
+                                    backgroundcolor: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  Spacer(),
+                                ],
                               ),
-                            ))
+                            ),
+                            // child: Text(
+                            //   "لا يوجد مكان في هذه العربيه",
+                            //   style: TextStyle(
+                            //     fontSize: 25,
+                            //     color: Color(0xff669E76),
+                            //   ),
+                            // ),
+                          )
                         : Expanded(
                             flex: 1,
                             child: Container(

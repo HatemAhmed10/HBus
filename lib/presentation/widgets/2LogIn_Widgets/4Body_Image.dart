@@ -32,7 +32,7 @@ class _Body_Image_ViewState extends State<Body_Image_View> {
       children: [
         Container(
           // color: Colors.black,
-          height: 200,
+          height: 250,
           child: Stack(children: [
             Positioned(
               top: 0,

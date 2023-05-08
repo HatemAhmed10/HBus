@@ -8,7 +8,7 @@ class register_view extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LogIn_Body(),
+      body: Container(child: LogIn_Body()),
     );
   }
 }

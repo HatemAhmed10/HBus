@@ -52,11 +52,11 @@ class Body_TextForm_View extends StatelessWidget {
         builder: (context, state) {
           return Form(
             key: formKey,
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Padding(
+            child: Container(
+              // color: Colors.blue,
+              child: Column(
+                children: [
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       child: TextFormField(
@@ -96,11 +96,7 @@ class Body_TextForm_View extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-
-                Expanded(
-                  flex: 1,
-                  child: Padding(
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       child: TextFormField(
@@ -133,10 +129,7 @@ class Body_TextForm_View extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       child: TextFormField(
@@ -169,81 +162,87 @@ class Body_TextForm_View extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    // color: Colors.blue,
-                    child: CustomAnimatedButton(
-                      // ButtonHight: 80,
-                      Buttonwidth: 130,
-                      backgroundcolor: Color(0xffD6A4DE),
-                      shape: BoxShape.rectangle,
-                      function: () {
-                        if (formKey.currentState!.validate()) {
-                          // SocialLoginCubit.get(context).userLogin(
-                          //   email: emailController.text,
-                          //   password: passwordController.text,
-                          // );
-                          register_Cubit.get(context).userCreate(
-                              name: NameController.text,
-                              phone: PhoneController.text,
-                              country: countryController.text);
-                          // navigateTo(context, Wait_View());
-                        }
-                      },
-                      widget: Text(
-                        'تسجيل الدخول',
-                        // style: TextStyle(fontSize: 13, color: Colors.white),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ConditionalBuilder(
+                    condition: state is! AddUserLoadingSuccessState,
+                    fallback: (context) => Center(
+                        child: CircularProgressIndicator(
+                      color: Color(0xffD6A4DE),
+                    )),
+                    builder: (context) => Container(
+                      // color: Colors.blue,
+                      child: CustomAnimatedButton(
+                        // ButtonHight: 80,
+                        Buttonwidth: 130,
+                        backgroundcolor: Color(0xffD6A4DE),
+                        shape: BoxShape.rectangle,
+                        function: () {
+                          if (formKey.currentState!.validate()) {
+                            // SocialLoginCubit.get(context).userLogin(
+                            //   email: emailController.text,
+                            //   password: passwordController.text,
+                            // );
+                            register_Cubit.get(context).userCreate(
+                                name: NameController.text,
+                                phone: PhoneController.text,
+                                country: countryController.text);
+                            // navigateTo(context, Wait_View());
+                          }
+                        },
+                        widget: Text(
+                          'تسجيل الدخول',
+                          // style: TextStyle(fontSize: 13, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
-                ),
 
-                // // ConditionalBuilder(
-                // //   condition: state is! SocialLoginLoadingState,
-                // //   builder: (context) => Center(
-                // //     child: Padding(
-                // //       padding: const EdgeInsets.only(top: 30),
-                // //       child: Container(
-                // //         width: 110,
-                // //         height: 50,
-                // //         decoration: BoxDecoration(
-                // //           borderRadius: BorderRadius.circular(
-                // //             20.0,
-                // //           ),
-                // //           color: ColorManager.defaultRedColor2,
-                // //         ),
-                // //         child: MaterialButton(
-                // //           onPressed: () {
-                // //             if (formKey.currentState!.validate()) {
-                // //               SocialLoginCubit.get(context).userLogin(
-                // //                 email: emailController.text,
-                // //                 password: passwordController.text,
-                // //               );
-                // //               // navigateTo(
-                // //               //     context,
-                // //               //     HomeExam_Screen(
-                // //               //       UserEmail: "Saad10@gmail.com",
-                // //               //     ));
-                // //             }
-                // //           },
-                // //           child: Text(
-                // //             'تسجيل الدخول',
-                // //             style: TextStyle(fontSize: 13, color: Colors.white),
-                // //           ),
-                // //         ),
-                // //       ),
-                // //     ),
-                // //   ),
+                  // // ConditionalBuilder(
+                  // //   condition: state is! SocialLoginLoadingState,
+                  // //   builder: (context) => Center(
+                  // //     child: Padding(
+                  // //       padding: const EdgeInsets.only(top: 30),
+                  // //       child: Container(
+                  // //         width: 110,
+                  // //         height: 50,
+                  // //         decoration: BoxDecoration(
+                  // //           borderRadius: BorderRadius.circular(
+                  // //             20.0,
+                  // //           ),
+                  // //           color: ColorManager.defaultRedColor2,
+                  // //         ),
+                  // //         child: MaterialButton(
+                  // //           onPressed: () {
+                  // //             if (formKey.currentState!.validate()) {
+                  // //               SocialLoginCubit.get(context).userLogin(
+                  // //                 email: emailController.text,
+                  // //                 password: passwordController.text,
+                  // //               );
+                  // //               // navigateTo(
+                  // //               //     context,
+                  // //               //     HomeExam_Screen(
+                  // //               //       UserEmail: "Saad10@gmail.com",
+                  // //               //     ));
+                  // //             }
+                  // //           },
+                  // //           child: Text(
+                  // //             'تسجيل الدخول',
+                  // //             style: TextStyle(fontSize: 13, color: Colors.white),
+                  // //           ),
+                  // //         ),
+                  // //       ),
+                  // //     ),
+                  // //   ),
 
-                // //   fallback: (context) => Center(
-                // //       child: CircularProgressIndicator(
-                // //     color: ColorManager.defaultRedColor2,
-                // //   )),
-                // // ),
-              ],
+                  // //   fallback: (context) => Center(
+                  // //       child: CircularProgressIndicator(
+                  // //     color: ColorManager.defaultRedColor2,
+                  // //   )),
+                  // // ),
+                ],
+              ),
             ),
           );
         },

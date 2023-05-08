@@ -11,6 +11,7 @@ class register_Cubit extends Cubit<register_States> {
   register_Cubit() : super(registerInitialState());
 
   static register_Cubit get(context) => BlocProvider.of(context);
+
   UsersModel? model;
   void userCreate({
     required String name,
