@@ -2,6 +2,7 @@ import 'package:h_bus/business_logic/2register/register_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:h_bus/shared/components/1Tooles/4CustomshowToast.dart';
 import 'package:hive_flutter/adapters.dart';
 import '../../data/models/1user_model.dart';
 import '../../shared/components/constants.dart';
@@ -30,6 +31,7 @@ class register_Cubit extends Cubit<register_States> {
         .then((value) async {
       var notesBox = Hive.box<UsersModel>(kUsersBox);
       await notesBox.add(model!);
+      showToast(text: "تم التسجيل", state: ToastStates.SUCCESS);
       emit(AddUserSuccessState());
     }).catchError((error) {
       emit(AddUserErrorState(error.toString()));

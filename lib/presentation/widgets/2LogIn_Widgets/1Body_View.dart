@@ -17,13 +17,13 @@ class LogIn_Body extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Expanded(
-            //   flex: 4,
-            //   child: Container(
-            //     // color: Colors.yellow,
-            //     child: const Body_Image_View(),
-            //   ),
-            // ),
+            Expanded(
+              flex: 4,
+              child: Container(
+                // color: Colors.yellow,
+                child: const Body_Image_View(),
+              ),
+            ),
             Expanded(
               flex: 1,
               child: Container(

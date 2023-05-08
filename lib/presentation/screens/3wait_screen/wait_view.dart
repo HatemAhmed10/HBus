@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:h_bus/shared/components/1Tooles/4CustomshowToast.dart';
 
 import '../../../business_logic/3wait/wait_cubit.dart';
 import '../../../business_logic/3wait/wait_state.dart';
@@ -24,7 +25,6 @@ class Wait_View extends StatelessWidget {
       child: BlocConsumer<wait_Cubit, wait_States>(
         listener: (context, state) {
           if (wait_Cubit.get(context).users!.state == true) {
-            print("Dada");
             CacheHelper.saveData(
               key: 'state',
               value: true,
@@ -34,6 +34,7 @@ class Wait_View extends StatelessWidget {
                   Bus_View(
                     usersModel: usersModel,
                   ));
+              showToast(text: "تم الموافقه", state: ToastStates.SUCCESS);
             });
           }
         },

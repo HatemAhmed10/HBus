@@ -10,7 +10,7 @@ class Body_Text_View extends StatelessWidget {
         Text(
           "ادخل الان لحجز عربتك",
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 15,
             fontFamily: "bold",
             color: Color(0xffD6A4DE),
           ),

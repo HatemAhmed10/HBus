@@ -13,3 +13,10 @@ List<Color> kColors = const [
   Color(0xff537D8D),
   Color(0xff482C3D),
 ];
+
+List<AssetImage> TravelImage = [
+  AssetImage(ImageAssets.car1),
+  AssetImage(ImageAssets.car2),
+  AssetImage(ImageAssets.car3),
+  AssetImage(ImageAssets.car4),
+];
